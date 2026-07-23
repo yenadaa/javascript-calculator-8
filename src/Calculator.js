@@ -1,0 +1,50 @@
+class ParsingClass {
+    inputText;
+
+    constructor(inputText){
+        this.inputText = inputText;
+    }
+    parse() {
+        if(this.inputText === "") return [0];
+        // 빈 문자열 입력 시 0을 반환
+
+        if(/^\d+$/.test(this.inputText)) return [this.inputText];
+        // 숫자만 존재할 경우 해당 숫자 그대로 반환
+        
+        if(this.inputText.startsWith('//')){
+            // 문자열이 '//'로 시작하는지 확인
+            
+            const newlineIndex = this.inputText.indexOf('\n');
+            // 커스텀구분자가 한글자 이상일 수 있으므로 미리 '\n'의 인덱스를 변수에 저장
+            
+            const custom = this.inputText.substring(2, newlineIndex);
+            // '//'와 '\n'사이에 있는 구분자 추출
+            
+            const customInput = this.inputText.substring(newlineIndex+1);
+            // '\n'에서 n 다음에 해당하는 인덱스부터 끝까지 추출 
+            
+            const customArr = customInput.split(custom);
+            // 추출한 문자열에서 커스텀구분자를 기준으로 분리하여 숫자 추출
+            
+            return customArr
+        
+        }// else 최대한 쓰지 않고 작성
+        
+        const arr = this.inputText.split(/[,:]/);
+        // 정규식을 사용하여 기본 구분자 쉼표와 콜론을 기준으로 분리하여 숫자 추출
+        
+        return arr;
+    }
+}
+
+class calc {
+    arrayReturn;
+
+    constructor(arrayReturn) {
+        this.arrayReturn = arrayReturn;
+    }
+
+    plus() {
+        
+    }
+}
