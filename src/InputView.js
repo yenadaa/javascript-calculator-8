@@ -8,4 +8,4 @@ class InputClass {
     }
 }
 
-
+export default InputClass
