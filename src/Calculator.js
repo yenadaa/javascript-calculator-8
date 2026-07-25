@@ -40,7 +40,7 @@ class ParsingClass {
     }
 }
 
-class calc {
+class CalculatorClass {
     arrayReturn;
 
     constructor(arrayReturn) {
@@ -55,3 +55,5 @@ class calc {
         return sum; // 배열의 합 반환
     }
 }
+
+export {ParsingClass, CalculatorClass};
