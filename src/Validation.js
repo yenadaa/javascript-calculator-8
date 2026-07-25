@@ -1,4 +1,4 @@
-class ValidationError {
+export class ValidationError {
     check(parseNumbers, inputText) {
         if(inputText === "") return;
         const isOnlySeparators = parseNumbers.every(num => num === 0);
