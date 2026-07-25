@@ -9,3 +9,4 @@ class InputClass {
 }
 
 export default InputClass
+export const inputText;
